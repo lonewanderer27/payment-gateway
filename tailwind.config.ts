@@ -13,8 +13,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        gcash: '#0057e4',
+        'gcash-label': '#a3a9b7',
+      }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 export default config
