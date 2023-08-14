@@ -29,12 +29,14 @@ export default function GCashLogin() {
 
   const r = useRouter();
   const searchParams = useSearchParams();
-  const merchant = searchParams.get("merchant")
-  const amountDue = searchParams.get("amountDue")
+  const merchant = searchParams.get("merchant");
+  const amountDue = searchParams.get("amountDue");
 
   const onSubmit = (values: FieldValues) => {
     console.log(values);
-    r.push(`/gcash/otp?${searchParams.toString()}&mobile=0${values.mobileNumber}`);
+    r.push(
+      `/gcash/otp?${searchParams.toString()}&mobile=0${values.mobileNumber}`
+    );
   };
 
   return (
@@ -43,25 +45,25 @@ export default function GCashLogin() {
         <img
           src="/gcash/logo.png"
           alt="GCash Logo"
-          className="sm:mt-20 my-6 h-14"
+          className="sm:mt-20 my-12 h-14"
         />
       </div>
       <div className="rounded-md card bg-base-100 shadow-md px-5 sm:px-10 sm:absolute sm:top-52 py-4 sm:py-8">
-        <div className="grid grid-cols-2 pt-10 gap-x-10 gap-y-5 text-gcash-label text-lg">
-          <div className="col-span-1">
+        <div className="grid grid-cols-5 sm:py-4 gap-x-10 gap-y-5 text-gcash-label text-md sm:text-lg">
+          <div className="col-span-2">
             <h4>Merchant</h4>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-3">
             <h4>{merchant}</h4>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2">
             <h4>Amount Due</h4>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-3">
             <h4 className="text-gcash">PHP {amountDue}</h4>
           </div>
         </div>
-        <div className="">
+        <div className="py-4">
           <h2 className={`card-title ${poppins.className}`}>
             Login to pay with GCash
           </h2>
@@ -87,7 +89,7 @@ export default function GCashLogin() {
             <FormHelperText>Please enter your mobile number</FormHelperText>
           </FormControl>
         </div>
-        <div className="card-actions py-4">
+        <div className="card-actions pt-4">
           <button
             className={`btn bg-gcash text-white btn-block btn-circle ${
               !isValid ? "btn-disabled" : ""

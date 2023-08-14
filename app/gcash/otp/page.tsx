@@ -49,8 +49,9 @@ export default function GCashOTP() {
         leastDestructiveRef={cancelRef}
         onClose={onClose}
         motionPreset="slideInBottom"
+        isCentered
       >
-        <AlertDialogOverlay>
+        <AlertDialogOverlay className="p-4">
           <AlertDialogContent>
             <AlertDialogHeader>New Message</AlertDialogHeader>
             <AlertDialogBody>
@@ -71,12 +72,12 @@ export default function GCashOTP() {
           <img
             src="/gcash/logo.png"
             alt="GCash Logo"
-            className="sm:mt-20 my-10 h-14"
+            className="sm:mt-20 my-12 h-14"
           />
         </div>
         <div className="rounded-md card bg-base-100 shadow-md px-5 sm:px-10 sm:absolute sm:top-52 py-4 sm:py-8">
-          <div>
-            <h2 className="card-title py-2">Login to pay with GCash</h2>
+          <div className="sm:py-4">
+            <h2 className="card-title pb-2">Login to pay with GCash</h2>
             <p className="max-w-xs">
               Great! We sent a 6-digit authentication code to your number{" "}
               {mobile}
@@ -119,7 +120,7 @@ export default function GCashOTP() {
               )}
             </div>
           </div>
-          <div className="card-actions py-4">
+          <div className="card-actions pt-4">
             <button
               className={`btn bg-gcash text-white btn-block btn-circle ${
                 otpInput.length !== 6 ? "btn-disabled" : ""
